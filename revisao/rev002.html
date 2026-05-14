@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício de revisão 02</title>
+</head>
+<body>
+    
+    <script>
+        var nome = window.prompt("Digite seu nome:");
+        const custoBase = parseFloat(window.prompt("Digite o custo base da análise de solo:"))
+        var Urgencia = window.confirm("Deseja incluir a taxa de urgência?")
+       
+        if (Urgencia === true) {
+            let valorTotal = custoBase + (custoBase * 0.5);
+            window.alert(`Valor total: ${valorTotal.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}<br>Seu nome possui ${nome.length} caracteres.`);
+        } else {
+            window.alert(`Valor total: ${custoBase.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}<br>Seu nome possui ${nome.length} caracteres.`);
+        }
+    </script>
+</body>
+</html>
