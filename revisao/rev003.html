@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Painel de Ciclista</title>
+    <style>
+        .area-desconhecida {
+            background-color: #f8d7da;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: Arial, sans-serif;
+            width: 300px;
+        }
+        .area-conquistada {
+            background-color: #d4edda;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: Arial, sans-serif;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="territorio-card" class="area-desconhecida">
+        <h2 name="titulo-area">Trilha da Pedreira</h2>
+        <p>Status: <span id="status-territorio">Não Conquistado</span></p>
+        <p>Nível do Avatar: <span class="nivel-avatar">5</span></p>
+        
+        <button id="btn-conquistar" onclick="conquistar()">Mapear e Conquistar</button>
+    </div>
+
+    <script>
+        function conquistar(){
+            const botao = window.document.getElementById("btn-conquistar")
+            const status = window.document.getElementById("status-territorio")
+            const card = window.document.getElementById("territorio-card")
+            const nivelAvatar = window.document.querySelector(".nivel-avatar")
+
+            status.innerText = "Área Conquistada!"
+            nivelAvatar.innerText = parseInt(nivelAvatar.innerText) + 1
+            card.className = "area-conquistada"
+            botao.disabled = true
+            botao.innerText = "Área Conquistada!"
+        }
+    </script>
+</body>
+</html>
