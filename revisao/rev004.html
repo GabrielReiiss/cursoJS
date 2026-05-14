@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Plataforma de Adoção</title>
+    <style>
+        .card-padrao {
+            background-color: #f1f1f1;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: sans-serif;
+            width: 300px;
+            text-align: center;
+        }
+        .card-destaque {
+            background-color: #fff3cd;
+            border: 2px solid #ffecb5;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: sans-serif;
+            width: 300px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="perfil-animal" class="card-padrao">
+        <h2 id="nome-animal">Luna</h2>
+        <p>Pessoas interessadas: <span name="contador-interessados">0</span></p>
+        <p class="status">Disponível para adoção</p>
+        
+        <button id="btn-interesse" onclick="demonstrar()">Demonstrar Interesse</button>
+    </div>
+
+
+    <script>
+        function demonstrar() {
+            const botao = window.document.getElementById('btn-interesse');
+            const contador = window.document.getElementsByName('contador-interessados')[0];
+            const status = window.document.getElementsByClassName('status')[0];
+            const perfil = window.document.getElementById('perfil-animal');
+
+            let numeroInteressados = parseInt(contador.innerText)
+            numeroInteressados += 1;
+            contador.innerText = numeroInteressados;
+
+            status.innerText = 'Em processo de adoção'
+
+            perfil.className = 'card-destaque';
+
+            botao.disabled = true;
+            botao.innerText = 'Interesse Demonstrado';
+        }
+    </script>
+</body>
+</html>
