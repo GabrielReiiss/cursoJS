@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 09 - Curso JS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        input {
+            padding: 10px;
+            margin-right: 10px;
+            width: 250px;
+        }
+        button {
+            padding: 10px 20px;
+        }
+        p {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sistema de Multas</h1>
+    <input type="number" id="velocidade" placeholder="Digite a velocidade do veículo (km/h)">
+    <button onclick="verificarMulta()">Verificar Multa</button>
+    <p id="resultado"></p>
+
+    <script>
+        function verificarMulta() {
+            const vel = window.document.getElementById('velocidade').value;
+            const resultado = window.document.getElementById('resultado');
+
+            if (vel > 60) {
+                resultado.innerHTML = `Velocidade: ${vel} km/h - Multa de R$ 133,00`;
+            } else {
+                resultado.innerHTML = `Velocidade: ${vel} km/h - Sem multa`;
+            }
+        }
+    </script>
+</body>
+</html>
