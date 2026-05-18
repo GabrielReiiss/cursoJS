@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Umidade do Solo</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        #painel-geolabor {
+            background-color: #f4f4f4;
+            padding: 20px;
+            width: 350px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+            margin: auto;
+            display: block;
+        }
+        #resultado {
+            margin-top: 15px;
+            padding: 15px;
+            border-radius: 5px;
+            background-color: #e9ecef;
+            text-align: center;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="painel-geolabor">
+        <h2>Sensores de Umidade (%)</h2>
+        <p>Amostra 1: <input type="number" id="amostra1" step="0.1"></p>
+        <p>Amostra 2: <input type="number" id="amostra2" step="0.1"></p>
+        <p>Amostra 3: <input type="number" id="amostra3" step="0.1"></p>
+        
+        <button id="calcular" onclick="calcular()">Processar Leituras</button>
+        
+        <div id="resultado">
+            Aguardando processamento...
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
