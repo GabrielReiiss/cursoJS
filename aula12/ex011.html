@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 11</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        input {
+            padding: 10px;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+        #resultado {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <input type="number" id="txtIdade" placeholder="Digite sua idade">
+    <p id="resultado"></p>
+    <button onclick="verificar()">Verificar</button>
+
+    <script>
+        function verificar() {
+            const idade = window.document.getElementById('txtIdade').value
+            const resultado = window.document.getElementById('resultado')
+
+            if (idade < 16) {
+                resultado.innerHTML = 'Não vota'
+            } else if (idade < 18 || idade > 65) {
+                resultado.innerHTML = 'Voto opcional'
+            } else {
+                resultado.innerHTML = 'Voto obrigatório'
+            }
+        }
+    </script>
+</body>
+</html>
