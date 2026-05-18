@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Validador Geotécnico</title>
+    <style>
+        .painel {
+            background-color: #e9ecef;
+            padding: 20px;
+            border-radius: 8px;
+            width: 350px;
+            font-family: Arial, sans-serif;
+        }
+        .aprovado {
+            color: green;
+            font-weight: bold;
+        }
+        .reprovado {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="painel">
+        <h2>Análise de Fundação</h2>
+        <p>Informe o índice de resistência à penetração (NSPT):</p>
+        
+        <input type="number" id="input-resistencia" placeholder="Ex: 15">
+        <button id="btn-analisar" onclick="analisarSolo()">Analisar Solo</button>
+        
+        <p>Resultado da avaliação: <span id="resultado-avaliacao">Aguardando dados...</span></p>
+    </div>
+
+    <script>
+        function analisarSolo() {
+            const resistencia = parseInt(window.document.getElementById('input-resistencia').value)
+            const button = window.document.getElementById('btn-analisar')
+            const resultado = window.document.getElementById('resultado-avaliacao')
+
+            if(resistencia >= 10) {
+                resultado.innerText = 'Aprovado para fundação direta'
+                resultado.className = 'aprovado'
+            } else {
+                resultado.innerText = 'Requer reforço ou fundação profunda'
+                resultado.className = 'reprovado'
+            }
+        }
+    </script>
+</body>
+</html>
