@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>RocaTech - Controle de Engorda</title>
+    <style>
+        body { background-color: #2b4c3b; font-family: Verdana, sans-serif; }
+        header { color: white; text-align: center; }
+        section { background: white; border-radius: 10px; padding: 20px; width: 550px; margin: auto; box-shadow: 3px 3px 10px rgba(0,0,0,0.3); }
+        select { width: 100%; margin-top: 10px; }
+        .painel { margin-bottom: 15px; }
+        #relatorio { margin-top: 15px; padding: 15px; border-radius: 5px; background: #e9ecef; display: none; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Módulo de Pesagem</h1>
+    </header>
+    <section>
+        <div class="painel">
+            <p>Código do Animal: <input type="text" id="codigoBoi"></p>
+            <p>Peso (kg): <input type="number" id="pesoBoi" step="0.5"></p>
+            <button onclick="registrar()">Registrar Animal</button>
+        </div>
+        
+        <select id="listaAnimais" size="8"></select><br><br>
+        
+        <button onclick="gerarRelatorio()">Gerar Relatório de Lote</button>
+        
+        <div id="relatorio">
+            </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -10,7 +10,7 @@ function adicionar() {
         return
     }
 
-    if(vetorNumeros.includes(numero.value)){
+    if(vetorNumeros.includes(Number(numero.value))){
         window.alert('Número já adicionado anteriormente!')
     } else {
         let option = document.createElement('option')
